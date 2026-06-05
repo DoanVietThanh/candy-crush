@@ -14,6 +14,7 @@
 # next.js
 /.next/
 /out/
+CLAUDE.md
 
 # production
 /build

@@ -5,128 +5,565 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: var(--font-sans);
-    --font-sans: var(--font-sans);
-    --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-accent: var(--accent);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-secondary: var(--secondary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-popover: var(--popover);
-    --color-card-foreground: var(--card-foreground);
-    --color-card: var(--card);
-    --color-foreground: var(--foreground);
-    --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.5 0.134 242.749);
-    --primary-foreground: oklch(0.977 0.013 236.62);
-    --secondary: oklch(0.967 0.001 286.375);
-    --secondary-foreground: oklch(0.21 0.006 285.885);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.865 0.127 207.078);
-    --chart-2: oklch(0.715 0.143 215.221);
-    --chart-3: oklch(0.609 0.126 221.723);
-    --chart-4: oklch(0.52 0.105 223.128);
-    --chart-5: oklch(0.45 0.085 224.283);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.588 0.158 241.966);
-    --sidebar-primary-foreground: oklch(0.977 0.013 236.62);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.5 0.134 242.749);
+  --primary-foreground: oklch(0.977 0.013 236.62);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.865 0.127 207.078);
+  --chart-2: oklch(0.715 0.143 215.221);
+  --chart-3: oklch(0.609 0.126 221.723);
+  --chart-4: oklch(0.52 0.105 223.128);
+  --chart-5: oklch(0.45 0.085 224.283);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.588 0.158 241.966);
+  --sidebar-primary-foreground: oklch(0.977 0.013 236.62);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.443 0.11 240.79);
-    --primary-foreground: oklch(0.977 0.013 236.62);
-    --secondary: oklch(0.274 0.006 286.033);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.865 0.127 207.078);
-    --chart-2: oklch(0.715 0.143 215.221);
-    --chart-3: oklch(0.609 0.126 221.723);
-    --chart-4: oklch(0.52 0.105 223.128);
-    --chart-5: oklch(0.45 0.085 224.283);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.685 0.169 237.323);
-    --sidebar-primary-foreground: oklch(0.293 0.066 243.157);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.443 0.11 240.79);
+  --primary-foreground: oklch(0.977 0.013 236.62);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.865 0.127 207.078);
+  --chart-2: oklch(0.715 0.143 215.221);
+  --chart-3: oklch(0.609 0.126 221.723);
+  --chart-4: oklch(0.52 0.105 223.128);
+  --chart-5: oklch(0.45 0.085 224.283);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.685 0.169 237.323);
+  --sidebar-primary-foreground: oklch(0.293 0.066 243.157);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
+
   body {
     @apply bg-background text-foreground;
-    }
-  button:not(:disabled), [role="button"]:not(:disabled) {
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
-    }
+  }
+
   html {
     @apply font-sans;
-    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Life Savers playable — brand tokens, atmosphere & motion           */
+/* ------------------------------------------------------------------ */
+
+:root {
+  /* Brand wordmark blue, sampled from the Life Savers logo. */
+  --ls-blue: #1d4f9f;
+  --ls-blue-deep: #14387a;
+  /* Candy rainbow used across stripes, glows and confetti. */
+  --ls-red: #ec1c24;
+  --ls-yellow: #ffe000;
+  --ls-orange: #f7941e;
+  --ls-pink: #ec008c;
+  --ls-green: #39b54a;
+  --ls-lime: #8dc63f;
+  /* Candy-themed surfaces for the gameplay board. */
+  --ls-board-frame: #f7a14b;
+  --ls-tile: #dcecfb;
+  --ls-tile-edge: #c2d8f2;
+
+  --stage-max: 460px;
+  --board-pad: clamp(0.5rem, 2.5vw, 0.9rem);
+}
+
+/* The playable lives in a fixed portrait stage, centred on larger screens
+   against a soft candy backdrop so it reads as an intentional ad unit. */
+.ls-shell {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(0px, 2vw, 24px);
+  background:
+    radial-gradient(120% 80% at 50% -10%, #ffd1e8 0%, transparent 55%),
+    radial-gradient(120% 90% at 50% 110%, #cdeafc 0%, transparent 55%), #f3e9ff;
+  overflow: hidden;
+}
+
+.ls-stage {
+  position: relative;
+  width: 100%;
+  max-width: var(--stage-max);
+  height: min(100svh, calc(var(--stage-max) * 1.86));
+  border-radius: clamp(0px, 4vw, 28px);
+  overflow: hidden;
+  box-shadow:
+    0 30px 60px -20px rgb(20 56 122 / 0.45),
+    0 0 0 1px rgb(255 255 255 / 0.4) inset;
+  isolation: isolate;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+@media (max-width: 480px) {
+  .ls-shell {
+    padding: 0;
+  }
+
+  .ls-stage {
+    height: 100svh;
+    border-radius: 0;
+  }
+}
+
+/* Vivid candy-stripe backdrop for start/end screens — full saturation, no wash. */
+.ls-stripes {
+  background-color: var(--ls-red);
+  background-image: linear-gradient(
+    90deg,
+    var(--ls-red) 0 16.666%,
+    var(--ls-yellow) 16.666% 33.333%,
+    var(--ls-orange) 33.333% 50%,
+    var(--ls-green) 50% 66.666%,
+    var(--ls-pink) 66.666% 83.333%,
+    var(--ls-lime) 83.333% 100%
+  );
+}
+
+/* Full-frame candy decoration (product bags + gummies in the corners). */
+.ls-decor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 8px rgb(20 56 122 / 0.25));
+}
+
+/* ---- Gameplay header (light, candy themed) ---- */
+
+/* Rainbow scallop garland that runs along the top edge of the header. */
+.ls-garland {
+  height: 16px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ls-red) 0 14.28%,
+    var(--ls-orange) 14.28% 28.56%,
+    var(--ls-yellow) 28.56% 42.84%,
+    var(--ls-green) 42.84% 57.12%,
+    var(--ls-lime) 57.12% 71.4%,
+    var(--ls-pink) 71.4% 85.68%,
+    var(--ls-blue) 85.68% 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at 8px -2px,
+    #000 8px,
+    transparent 8.5px
+  );
+  mask-image: radial-gradient(circle at 8px -2px, #000 8px, transparent 8.5px);
+  -webkit-mask-size: 16px 16px;
+  mask-size: 16px 16px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+
+.ls-header-light {
+  background: linear-gradient(180deg, #ffffff 0%, #eef5ff 100%);
+  box-shadow: 0 6px 16px -8px rgb(20 56 122 / 0.4);
+}
+
+/* White stat pill with a blue inset value chip (SCORE / TIME). */
+.ls-stat {
+  background: #ffffff;
+  border: 2px solid #d9e6fb;
+  border-radius: 999px;
+  box-shadow: 0 3px 0 0 #cdddf6;
+}
+
+.ls-stat-chip {
+  background: linear-gradient(
+    180deg,
+    var(--ls-blue) 0%,
+    var(--ls-blue-deep) 100%
+  );
+  border-radius: 999px;
+  box-shadow: inset 0 1px 2px rgb(255 255 255 / 0.35);
+}
+
+/* ---- Board & candies ---- */
+
+.ls-board {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: var(--board-pad);
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow:
+    0 18px 30px -16px rgb(20 56 122 / 0.45),
+    0 0 0 6px #ffffff inset,
+    0 0 0 12px var(--ls-board-frame) inset;
+}
+
+.ls-board-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Static light-blue tile behind every cell, matching the reference board. */
+.ls-tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% / var(--bs));
+  height: calc(100% / var(--bs));
+}
+
+.ls-tile::after {
+  content: "";
+  position: absolute;
+  inset: 6%;
+  border-radius: 18%;
+  background: var(--ls-tile);
+  box-shadow: inset 0 0 0 2px var(--ls-tile-edge);
+}
+
+/* Positional layer: moves a candy to its (row,col) and animates fall/swap. */
+.ls-slot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% / var(--bs));
+  height: calc(100% / var(--bs));
+  transition: transform 250ms cubic-bezier(0.34, 1.3, 0.5, 1);
+  will-change: transform;
+}
+
+.ls-slot-btn {
+  position: absolute;
+  inset: 8%;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: transparent;
+}
+
+/* Art layer: handles enter (drop), clear (pop) and selection states. */
+.ls-candy-art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 4px rgb(20 56 122 / 0.28));
+  transform: scale(1);
+  transition:
+    transform 160ms ease,
+    filter 160ms ease;
+}
+
+.ls-slot[data-selected="true"] .ls-slot-btn {
+  background: radial-gradient(
+    circle,
+    rgb(255 255 255 / 0.95) 30%,
+    rgb(255 224 0 / 0.55) 75%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 0 3px var(--ls-yellow),
+    0 0 14px 2px rgb(255 224 0 / 0.8);
+}
+
+.ls-slot[data-selected="true"] .ls-candy-art {
+  animation: ls-pulse 0.7s ease-in-out infinite;
+}
+
+.ls-slot[data-entering="true"] .ls-candy-art {
+  animation: ls-drop-in 320ms cubic-bezier(0.34, 1.2, 0.5, 1) both;
+}
+
+.ls-slot[data-clearing="true"] .ls-candy-art {
+  animation: ls-pop-out 200ms ease-in forwards;
+}
+
+.ls-slot[data-invalid="true"] {
+  animation: ls-shake 0.4s ease-in-out;
+  z-index: 5;
+}
+
+@keyframes ls-drop-in {
+  0% {
+    transform: translateY(-230%) scale(0.85);
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ls-pop-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  40% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes ls-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes ls-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-14%);
+  }
+
+  40% {
+    transform: translateX(12%);
+  }
+
+  60% {
+    transform: translateX(-8%);
+  }
+
+  80% {
+    transform: translateX(5%);
+  }
+}
+
+/* ---- "GREAT" feedback burst ---- */
+.ls-great {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.ls-great img {
+  width: 62%;
+  max-width: 300px;
+  filter: drop-shadow(0 8px 10px rgb(20 56 122 / 0.45));
+  animation: ls-great-pop var(--great-ms, 650ms) cubic-bezier(0.2, 1.4, 0.4, 1)
+    forwards;
+}
+
+@keyframes ls-great-pop {
+  0% {
+    transform: scale(0.3) rotate(-8deg);
+    opacity: 0;
+  }
+
+  30% {
+    transform: scale(1.08) rotate(2deg);
+    opacity: 1;
+  }
+
+  70% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.15) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* ---- Shared press/float motion ---- */
+.ls-press {
+  transition:
+    transform 140ms cubic-bezier(0.34, 1.3, 0.5, 1),
+    filter 140ms ease;
+}
+
+.ls-press:active {
+  transform: scale(0.94);
+}
+
+.ls-cta {
+  animation: ls-cta-bob 1.4s ease-in-out infinite;
+}
+
+@keyframes ls-cta-bob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.03);
+  }
+}
+
+.ls-float {
+  animation: ls-float 3.5s ease-in-out infinite;
+}
+
+.ls-float-slow {
+  animation: ls-float 4.6s ease-in-out infinite;
+}
+
+@keyframes ls-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+.ls-fade-in {
+  animation: ls-fade-in 360ms ease both;
+}
+
+@keyframes ls-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ls-spin {
+  animation: ls-spin 0.9s linear infinite;
+}
+
+@keyframes ls-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ls-slot {
+    transition: none;
+  }
+
+  .ls-candy-art,
+  .ls-cta,
+  .ls-float,
+  .ls-float-slow,
+  .ls-great img,
+  .ls-spin {
+    animation: none !important;
+  }
 }
