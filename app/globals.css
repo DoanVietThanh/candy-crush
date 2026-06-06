@@ -152,7 +152,7 @@
   --ls-lime: #8dc63f;
   /* Candy-themed surfaces for the gameplay board. */
   --ls-board-frame: #f7a14b;
-  --ls-tile: #dcecfb;
+  --ls-tile: #dde6f0;
   --ls-tile-edge: #c2d8f2;
 
   --stage-max: 460px;
@@ -202,15 +202,13 @@
 /* Vivid candy-stripe backdrop for start/end screens — full saturation, no wash. */
 .ls-stripes {
   background-color: var(--ls-red);
-  background-image: linear-gradient(
-    90deg,
-    var(--ls-red) 0 16.666%,
-    var(--ls-yellow) 16.666% 33.333%,
-    var(--ls-orange) 33.333% 50%,
-    var(--ls-green) 50% 66.666%,
-    var(--ls-pink) 66.666% 83.333%,
-    var(--ls-lime) 83.333% 100%
-  );
+  background-image: linear-gradient(90deg,
+      var(--ls-red) 0 16.666%,
+      var(--ls-yellow) 16.666% 33.333%,
+      var(--ls-orange) 33.333% 50%,
+      var(--ls-green) 50% 66.666%,
+      var(--ls-pink) 66.666% 83.333%,
+      var(--ls-lime) 83.333% 100%);
 }
 
 /* Full-frame candy decoration (product bags + gummies in the corners). */
@@ -224,54 +222,109 @@
   filter: drop-shadow(0 6px 8px rgb(20 56 122 / 0.25));
 }
 
-/* ---- Gameplay header (light, candy themed) ---- */
+/* ---- Gameplay screen layout ---- */
 
-/* Rainbow scallop garland that runs along the top edge of the header. */
-.ls-garland {
-  height: 16px;
-  background-image: linear-gradient(
-    90deg,
-    var(--ls-red) 0 14.28%,
-    var(--ls-orange) 14.28% 28.56%,
-    var(--ls-yellow) 28.56% 42.84%,
-    var(--ls-green) 42.84% 57.12%,
-    var(--ls-lime) 57.12% 71.4%,
-    var(--ls-pink) 71.4% 85.68%,
-    var(--ls-blue) 85.68% 100%
-  );
-  -webkit-mask-image: radial-gradient(
-    circle at 8px -2px,
-    #000 8px,
-    transparent 8.5px
-  );
-  mask-image: radial-gradient(circle at 8px -2px, #000 8px, transparent 8.5px);
-  -webkit-mask-size: 16px 16px;
-  mask-size: 16px 16px;
-  -webkit-mask-repeat: repeat-x;
-  mask-repeat: repeat-x;
+/* Full play surface; the VectorSmartObject art is the dominant backdrop and
+   the score bar + board are anchored on top at the reference proportions. */
+.ls-gamescreen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 55%, #ffffff 100%);
 }
 
-.ls-header-light {
-  background: linear-gradient(180deg, #ffffff 0%, #eef5ff 100%);
-  box-shadow: 0 6px 16px -8px rgb(20 56 122 / 0.4);
+/* The complete Life Savers frame (garland, hanging banner, candy props).
+   Stretched to the stage so the banner stays near the top edge. */
+.ls-gs-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 0;
 }
 
-/* White stat pill with a blue inset value chip (SCORE / TIME). */
-.ls-stat {
+/* Score bar sits in the gap just below the hanging banner. */
+.ls-gs-score {
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86%;
+  max-width: 380px;
+  z-index: 10;
+}
+
+/* Board centred in the open middle of the frame, under the score bar. */
+.ls-gs-board {
+  position: absolute;
+  top: 35.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86%;
+  max-width: 392px;
+  z-index: 10;
+}
+
+/* ---- Blue score / time bar ---- */
+.ls-scorebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg,
+      #2f63c8 0%,
+      var(--ls-blue) 55%,
+      var(--ls-blue-deep) 100%);
+  border: 2px solid #6c95dd;
+  box-shadow:
+    0 4px 0 0 #102f6c,
+    0 8px 16px -6px rgb(16 47 108 / 0.55),
+    inset 0 1px 0 rgb(255 255 255 / 0.3);
+}
+
+.ls-scorebar-label {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 0.25);
+}
+
+.ls-scorebar-pill {
+  flex: 1 1 auto;
+  min-width: 70px;
+  text-align: center;
+  padding: 5px 12px;
+  border-radius: 10px;
   background: #ffffff;
-  border: 2px solid #d9e6fb;
-  border-radius: 999px;
-  box-shadow: 0 3px 0 0 #cdddf6;
+  color: var(--ls-blue-deep);
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 1;
+  box-shadow:
+    inset 0 -2px 0 rgb(20 56 122 / 0.12),
+    0 1px 2px rgb(0 0 0 / 0.15);
 }
 
-.ls-stat-chip {
-  background: linear-gradient(
-    180deg,
-    var(--ls-blue) 0%,
-    var(--ls-blue-deep) 100%
-  );
-  border-radius: 999px;
-  box-shadow: inset 0 1px 2px rgb(255 255 255 / 0.35);
+.ls-scorebar-time {
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: var(--ls-yellow);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 0.3);
+}
+
+.ls-scorebar-time-urgent {
+  color: #ffd0d0;
+  animation: ls-pulse 0.7s ease-in-out infinite;
 }
 
 /* ---- Board & candies ---- */
@@ -280,13 +333,14 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  padding: var(--board-pad);
-  border-radius: 26px;
+  padding: clamp(6px, 2vw, 11px);
   background: #ffffff;
-  box-shadow:
-    0 18px 30px -16px rgb(20 56 122 / 0.45),
-    0 0 0 6px #ffffff inset,
-    0 0 0 12px var(--ls-board-frame) inset;
+  border-style: solid;
+  border-width: clamp(11px, 3.4vw, 15px);
+  border-color: transparent;
+  /* Rainbow candy-stripe ribbon, sliced from the reference board art. */
+  border-image: url(/images/board-frame.png) 19 stretch;
+  box-shadow: 0 16px 28px -16px rgb(20 56 122 / 0.45);
 }
 
 .ls-board-grid {
@@ -307,8 +361,8 @@
 .ls-tile::after {
   content: "";
   position: absolute;
-  inset: 6%;
-  border-radius: 18%;
+  inset: 4%;
+  border-radius: 14%;
   background: var(--ls-tile);
   box-shadow: inset 0 0 0 2px var(--ls-tile-edge);
 }
@@ -326,7 +380,7 @@
 
 .ls-slot-btn {
   position: absolute;
-  inset: 8%;
+  inset: 3%;
   display: grid;
   place-items: center;
   border-radius: 999px;
@@ -347,12 +401,10 @@
 }
 
 .ls-slot[data-selected="true"] .ls-slot-btn {
-  background: radial-gradient(
-    circle,
-    rgb(255 255 255 / 0.95) 30%,
-    rgb(255 224 0 / 0.55) 75%,
-    transparent 100%
-  );
+  background: radial-gradient(circle,
+      rgb(255 255 255 / 0.95) 30%,
+      rgb(255 224 0 / 0.55) 75%,
+      transparent 100%);
   box-shadow:
     0 0 0 3px var(--ls-yellow),
     0 0 14px 2px rgb(255 224 0 / 0.8);
@@ -409,6 +461,7 @@
 }
 
 @keyframes ls-pulse {
+
   0%,
   100% {
     transform: scale(1);
@@ -420,6 +473,7 @@
 }
 
 @keyframes ls-shake {
+
   0%,
   100% {
     transform: translateX(0);
@@ -453,11 +507,10 @@
 }
 
 .ls-great img {
-  width: 62%;
-  max-width: 300px;
+  width: 76%;
+  max-width: 320px;
   filter: drop-shadow(0 8px 10px rgb(20 56 122 / 0.45));
-  animation: ls-great-pop var(--great-ms, 650ms) cubic-bezier(0.2, 1.4, 0.4, 1)
-    forwards;
+  animation: ls-great-pop var(--great-ms, 650ms) cubic-bezier(0.2, 1.4, 0.4, 1) forwards;
 }
 
 @keyframes ls-great-pop {
@@ -498,6 +551,7 @@
 }
 
 @keyframes ls-cta-bob {
+
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -517,6 +571,7 @@
 }
 
 @keyframes ls-float {
+
   0%,
   100% {
     transform: translateY(0) rotate(-3deg);

@@ -29,51 +29,42 @@ export function GameScreen({
   const size = board.length || 6
 
   return (
-    <div
-      className="relative flex h-full flex-col overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(180deg, #ffffff 0%, #f1f7ff 50%, #ffeef7 100%)",
-      }}
-    >
-      {/* Life Savers candy bags framing the play area, same art as the start screen. */}
+    <div className="ls-gamescreen">
+      {/* Full-frame Life Savers art: rainbow garland, hanging banner and the
+          candy decorations that surround the play area. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/Product.png"
-        alt=""
+        src="/images/frame-trimmed.png"
+        alt="Life Savers"
         draggable={false}
-        className="ls-decor opacity-90"
+        className="ls-gs-frame"
       />
 
-      <div className="relative z-10 flex h-full flex-col">
+      {/* Blue score / countdown bar, anchored just below the banner. */}
+      <div className="ls-gs-score">
         <Header score={score} timeLeft={timeLeft} />
+      </div>
 
-        <main className="relative flex flex-1 flex-col items-center justify-center px-4">
-          <div className="relative w-full max-w-[420px]">
-            <GameBoard
-              board={board}
-              size={size}
-              selected={selected}
-              invalidPair={invalidPair}
-              onSelect={onSelect}
-              onSwipe={onSwipe}
-            />
+      {/* Rainbow-framed board, centred in the open middle of the frame. */}
+      <div className="ls-gs-board">
+        <GameBoard
+          board={board}
+          size={size}
+          selected={selected}
+          invalidPair={invalidPair}
+          onSelect={onSelect}
+          onSwipe={onSwipe}
+        />
 
-            {showGreat && (
-              <div
-                className="ls-great"
-                style={{ ["--great-ms" as string]: `${FEEDBACK_MS}ms` }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/great.png" alt="Great!" />
-              </div>
-            )}
+        {showGreat && (
+          <div
+            className="ls-great"
+            style={{ ["--great-ms" as string]: `${FEEDBACK_MS}ms` }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/great.png" alt="Great!" />
           </div>
-
-          <p className="mt-5 text-center text-sm font-semibold text-(--ls-blue)/80">
-            Swipe a candy to match 3 or more!
-          </p>
-        </main>
+        )}
       </div>
     </div>
   )
