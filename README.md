@@ -1,8 +1,25 @@
-# Next.js template
-
-This is a Next.js template with shadcn/ui.
-
 # Life Savers Match-3 Playable Ad
+
+> **Author:** Đoàn Viết Thanh
+
+A mobile-first playable ad inspired by the Life Savers Match-3 gameplay flow. Built with **Next.js**, **React 19**, **TypeScript**, and **Tailwind CSS** + shadcn/ui.
+
+## Screenshots
+
+| Start Screen | Gameplay Board | End Screen |
+| :----------: | :------------: | :--------: |
+| ![Start Screen](assets/UI-demo/frame-1.png) | ![Gameplay Board](assets/UI-demo/frame-2.png) | ![End Screen](assets/UI-demo/frame-3.png) |
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the playable.
+
+---
 
 ## Objective
 
